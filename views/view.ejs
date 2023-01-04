@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(i in data) { %>
+                <tr>
+                    <td><%= data[i].id %></td>
+                    <td><%= data[i].name %></td>
+                    <td><%= data[i].email %></td>
+                    <td><%= data[i].password %></td>
+                    <td><a href="/DeleteData/<%= data[i].id %>">Delete</a></td>
+                    <td><a href="/UpdateData/<%= data[i].id %>">Update</a></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
